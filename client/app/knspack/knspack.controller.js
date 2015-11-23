@@ -73,33 +73,33 @@
                 );
             }
 
-            for (objeto in ws.objetos){
-            	for (var i 0; i <= ws.objetos.length; i++) {
-            		i * ws.objetos[i].Area
-            	};
-            }
+            // for (objeto in ws.objetos){
+            // 	for (var i 0; i <= ws.objetos.length; i++) {
+            // 		i * ws.objetos[i].Area
+            // 	};
+            // }
 
-            for (g = 0; g <= gold.max; g += 1) {
-                for (p = 0; p <= panacea.max; p += 1) {
-                    for (i = 0; i <= ichor.max; i += 1) {
-                        if (i * ichor.weight + g * gold.weight + p * panacea.weight > knapsack.weight) {
-                            continue;
-                        }
-                        if (i * ichor.volume + g * gold.volume + p * panacea.volume > knapsack.volume) {
-                            continue;
-                        }
-                        val = i * ichor.value + g * gold.value + p * panacea.value;
-                        if (val > max_val) {
-                            solutions = [];
-                            max_val = val;
-                        }
-                        if (val === max_val) {
-                            solutions.push([g, p, i]);
-                        }
-                    }
-                }
-            }
-            console.log(solutions)
+            // for (g = 0; g <= gold.max; g += 1) {
+            //     for (p = 0; p <= panacea.max; p += 1) {
+            //         for (i = 0; i <= ichor.max; i += 1) {
+            //             if (i * ichor.weight + g * gold.weight + p * panacea.weight > knapsack.weight) {
+            //                 continue;
+            //             }
+            //             if (i * ichor.volume + g * gold.volume + p * panacea.volume > knapsack.volume) {
+            //                 continue;
+            //             }
+            //             val = i * ichor.value + g * gold.value + p * panacea.value;
+            //             if (val > max_val) {
+            //                 solutions = [];
+            //                 max_val = val;
+            //             }
+            //             if (val === max_val) {
+            //                 solutions.push([g, p, i]);
+            //             }
+            //         }
+            //     }
+            // }
+            // console.log(solutions)
             // document.write("maximum value: " + max_val + '<br>');
             // for (i = 0; i < solutions.length; i += 1) {
             //     item = solutions[i];
