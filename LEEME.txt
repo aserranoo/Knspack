@@ -1,0 +1,8 @@
+Proceso y herramientas para el programa
+
+Se utilizo el framework AngularJS para realizar el PIA combinado con HTML5 y Bootsrap para efectos con node.js como servidor y generadores de templates Yeoman con angular-full-stack
+
+Se preparo el entorno descargando e instalando lo necesario
+Se utiliza JavaScript para las funciones y AngularJS como controlador
+se inicia agregando el volumen en cm^3 del estante y luego se presiona el boton calcular se va a crear una tabla en la parte de abajo con la informacion necesaria
+Se utilizo metodos de fuerza bruta para recorrer todos los arreglos y hacer los calculos

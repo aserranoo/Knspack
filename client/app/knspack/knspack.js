@@ -3,7 +3,7 @@
 angular.module('knsapackApp')
   .config(function($routeProvider) {
     $routeProvider
-      .when('/knspack', {
+      .when('/', {
         templateUrl: 'app/knspack/knspack.html',
         controller: 'KnspackController',
         controllerAs: 'ws'

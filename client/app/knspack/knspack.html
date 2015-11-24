@@ -19,7 +19,7 @@
             <input type="number" data-ng-model="ws.obj.Volumen" id="objVolumen" class="form-control" min="{5" } required="required">
         </div>
     </div>
-    <form class="form-inline">
+    <!-- <form class="form-inline">
         <div class="form-group col-md-3">
             <div class="input-group">
                 <div class="input-group-addon">Objeto</div>
@@ -38,9 +38,9 @@
                 <input type="text" data-ng-model="ws.obj.Precio" id="objPrecio" class="form-control" min="{5" } required="required">
                 <div class="input-group-addon">.00</div>
             </div>
-        </div>
-        <button type="button" data-ng-click="ws.agregarElementos(ws.obj)" class="btn btn-primary">Agregar</button>
-        <button type="button" ng-class="ws.objetos.length > 5 ? 'enabled':'disabled'" ng-click="ws.optimizarEspacio()"class="btn btn-primary">Optimizar Estante</button>
+        </div> -->
+    <!-- <button type="button" data-ng-click="ws.agregarElementos(ws.obj)" class="btn btn-primary">Agregar</button> -->
+    <button type="button" ng-class="ws.objetos.length > 5 ? 'enabled':'disabled'" ng-click="ws.optimizarEspacio()" class="btn btn-primary">Optimizar Estante</button>
     </form>
     <br>
     <table ng-if="ws.objetos.length > 0" class="table table-striped table-hover table-bordered">
@@ -49,7 +49,7 @@
                 <th>Nombre del Producto</th>
                 <th>Area</th>
                 <th>Precio</th>
-                <th></th>
+                <!-- <th></th> -->
             </tr>
         </thead>
         <tbody>
@@ -57,9 +57,31 @@
                 <td>{{n.Descripcion}}</td>
                 <td>{{n.Area}}</td>
                 <td>{{n.Precio}}</td>
-                <td style="width:10px;"><i style="cursor: pointer;" ng-click="ws.eliminarElementos($index)" class="fa fa-trash-o"></i></td>
+                <!-- <td style="width:10px;"><i style="cursor: pointer;" ng-click="ws.eliminarElementos($index)" class="fa fa-trash-o"></i></td> -->
             </tr>
         </tbody>
     </table>
+    <table class="table table-condesed">        
+        <thead>
+            <tr>
+                <th>Caja1</th>
+                <th>Caja2</th>
+                <th>Caja3</th>
+                <th>Caja4</th>
+                <th>Caja5</th>
+                <th>Caja6</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="n in ws.solutions">
+                <td>{{n.Caja1}}</td>
+                <td>{{n.Caja2}}</td>
+                <td>{{n.Caja3}}</td>
+                <td>{{n.Caja4}}</td>
+                <td>{{n.Caja5}}</td>
+                <td>{{n.Caja6}}</td>                
+            </tr>
+        </tbody>
+    </table>    
 </div>
 <footer></footer>
