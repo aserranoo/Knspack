@@ -1,8 +1,8 @@
 <navbar></navbar>
 <header class="hero-unit" id="banner">
     <div class="container">
-        <h1>TSO</h1>
-        <p class="lead">Knspack</p>
+        <h1>Temas Selectos de Optimización</h1>
+        <p class="lead">Knapsack</p>
         <img src="assets/images/fime_logo.gif">
         <img src="assets/images/uanl_logo.gif">
     </div>
@@ -13,55 +13,53 @@
             <h1 class="page-header">Objetos:</h1>
         </div>
     </div>
-    <div class="form-group">
-        <div class="input-group col-md-3 col-md-offset-9">
-            <div class="input-group-addon">Volumen estante</div>
-            <input type="number" data-ng-model="ws.obj.Volumen" id="objVolumen" class="form-control" min="{5" } required="required">
+    <div class="form-inline">
+        <div class="input-group col-md-8 col-md-offset-3">
+            <div>
+                <label>Tipo estantes: </label>
+                <input ng-model="ws.volumenChecked[0].check" ng-change="ws.checkVol(0)" ng-value="true" type="radio" name="optradio"> <img width="100px" height="100px" src="assets/images/Caja1.jpg" alt="">
+                <input ng-model="ws.volumenChecked[1].check" ng-change="ws.checkVol(1)" ng-value="true" type="radio" name="optradio"> <img width="100px" height="100px" src="/" alt="">
+                <input ng-model="ws.volumenChecked[2].check" ng-change="ws.checkVol(2)" ng-value="true" type="radio" name="optradio"> <img width="100px" height="100px" src="/" alt="">
+                <input ng-model="ws.volumenChecked[3].check" ng-change="ws.checkVol(3)" ng-value="true" type="radio" name="optradio"> <img width="100px" height="100px" src="/" alt="">
+                <input ng-model="ws.volumenChecked[4].check" ng-change="ws.checkVol(4)" ng-value="true" type="radio" name="optradio"> <img width="100px" height="100px" src="/" alt="">
+            </div>
         </div>
     </div>
-    <!-- <form class="form-inline">
-        <div class="form-group col-md-3">
-            <div class="input-group">
-                <div class="input-group-addon">Objeto</div>
-                <input type="text" data-ng-model="ws.obj.Descripcion" id="objDescripcion" class="form-control" min="{5" } required="required">
-            </div>
-        </div>
-        <div class="form-group col-md-3">
-            <div class="input-group">
-                <div class="input-group-addon">Volumen</div>
-                <input type="text" data-ng-model="ws.obj.Area" id="objArea" class="form-control" min="{5" } required="required">
-            </div>
-        </div>
-        <div class="form-group col-md-3">
-            <div class="input-group">
-                <div class="input-group-addon">$</div>
-                <input type="text" data-ng-model="ws.obj.Precio" id="objPrecio" class="form-control" min="{5" } required="required">
-                <div class="input-group-addon">.00</div>
-            </div>
-        </div> -->
-    <!-- <button type="button" data-ng-click="ws.agregarElementos(ws.obj)" class="btn btn-primary">Agregar</button> -->
     <button type="button" ng-class="ws.objetos.length > 5 ? 'enabled':'disabled'" ng-click="ws.optimizarEspacio()" class="btn btn-primary">Optimizar Estante</button>
     </form>
     <br>
-    <table ng-if="ws.objetos.length > 0" class="table table-striped table-hover table-bordered">
+    <br>
+    <table ng-if="ws.objetos.length > 0" class="table table-striped table-hover table-bordered col-md-5">
         <thead>
             <tr>
-                <th>Nombre del Producto</th>
-                <th>Area</th>
-                <th>Precio</th>
-                <!-- <th></th> -->
+                <th>Productos</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="n in ws.objetos" data-ng-click="ws.editarElementos($index)">
-                <td>{{n.Descripcion}}</td>
-                <td>{{n.Area}}</td>
-                <td>{{n.Precio}}</td>
-                <!-- <td style="width:10px;"><i style="cursor: pointer;" ng-click="ws.eliminarElementos($index)" class="fa fa-trash-o"></i></td> -->
+            <tr class="col-md-6" ng-repeat="n in ws.objetos" data-ng-click="ws.editarElementos($index)">
+                <td style="width:0.01%;text-align:center;vertical-align:middle;">
+                    <input ng-model="n.Checked" type="checkbox" name="" value="">
+                </td>
+                <td class="col-md-2">
+                    <img class="img-thumbnail" width="100px" height="100px" src="assets/images/Caja1.jpg" alt="Image">
+                    <ul>
+                        <li>Altura:{{n.Altura}} </li>
+                        <li>Largo: {{n.Largo}}</li>
+                        <li>Ancho: {{n.Ancho}}</li>
+                        <li>Volumen en cm&sup3;: {{n.Volumen}}</li>
+                        <li>Beneficio en MXN: {{n.Beneficio}}</li>
+                    </ul>
+                    <div class="form-inline ">
+                        <label style="font-size:10px;">Cantidad Max. de Objetos</label>
+                        <input ng-model="n.MenorA" style="width:15%;" class="form-control" type="number" name="" value="">
+                        <label style="font-size:10px;">Cantidad Min. de objetos</label>
+                        <input ng-model="n.MayorA" style="width:15%;" class="form-control" type="number" name="" value="">
+                    </div>
+                </td>
             </tr>
         </tbody>
     </table>
-    <table class="table table-condesed">        
+<!--     <table class="table table-condesed">
         <thead>
             <tr>
                 <th>Caja1</th>
@@ -79,9 +77,9 @@
                 <td>{{n.Caja3}}</td>
                 <td>{{n.Caja4}}</td>
                 <td>{{n.Caja5}}</td>
-                <td>{{n.Caja6}}</td>                
+                <td>{{n.Caja6}}</td>
             </tr>
         </tbody>
-    </table>    
+    </table> -->
 </div>
 <footer></footer>
